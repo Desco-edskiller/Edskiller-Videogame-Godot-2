@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Soundtrack de Videojuego.wav-4c7bbd2911169c31ca266ecbf28b4b21.sample"
+
+[deps]
+
+source_file="res://Terminados/Soundtrack de Videojuego.wav"
+dest_files=[ "res://.import/Soundtrack de Videojuego.wav-4c7bbd2911169c31ca266ecbf28b4b21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

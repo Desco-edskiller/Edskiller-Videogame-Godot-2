@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Terminados/Bloque.png" type="Texture" id=1]
+[ext_resource path="res://Terminados/Fondo.png" type="Texture" id=2]
+[ext_resource path="res://Puas3.gd" type="Script" id=3]
+[ext_resource path="res://Terminados/Puas.png" type="Texture" id=4]
+[ext_resource path="res://Portal3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Terminados/Soundtrack de Videojuego.wav" type="AudioStream" id=6]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Bloque.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 96, 32, 32, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 260.719, 31.6326 )
+
+[node name="Mundo3" type="Node2D"]
+
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 517.448, 300.429 )
+scale = Vector2( 0.415459, 0.503333 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 34, 33 )
+format = 1
+tile_data = PoolIntArray( 196628, 0, 0, 196629, 0, 0, 393232, 0, 0, 393233, 0, 0, 524301, 0, 0, 524302, 0, 0, 589843, 0, 0, 589844, 0, 0, 655370, 0, 0, 655371, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0 )
+
+[node name="Puas" type="Sprite" parent="."]
+position = Vector2( 171.954, 384.829 )
+scale = Vector2( 0.159402, 0.447075 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puas"]
+position = Vector2( -8.87207, 0.00012207 )
+shape = SubResource( 2 )
+
+[node name="Puas2" type="Sprite" parent="."]
+position = Vector2( 715.011, 88.5511 )
+scale = Vector2( 0.132968, 0.415175 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puas2"]
+position = Vector2( -5.46143, 6.5141 )
+shape = SubResource( 2 )
+
+[node name="Puas3" type="Sprite" parent="."]
+position = Vector2( 816.128, 380.586 )
+scale = Vector2( 0.162046, 0.468342 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puas3"]
+position = Vector2( 21.1563, 5.75208 )
+shape = SubResource( 2 )
+
+[node name="Portal3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1009.75, 330.926 )
+escena = "Mundo4"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
